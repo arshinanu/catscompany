@@ -32,6 +32,14 @@ public class CompanyController {
         return ResponseEntity.status(201).body(companyService.createCompany(company));
     }
 
+    @GetMapping ("/getcompanies")
+    public ResponseEntity<Object> getAllCompanyInfo()
+    {
+
+        return ResponseEntity.status(200).body(companyService.getCompanies());
+
+    }
+
     @GetMapping ("/info/{companyCode}")
     public ResponseEntity<Object> getCompany(@PathVariable(required = false) String companyCode)
     {
